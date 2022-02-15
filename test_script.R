@@ -20,5 +20,5 @@ fwrite(out, "test_out.tsv", sep = "\t", row.names = FALSE)
 
 
 #some random comment
-
+renv::snapshot()
 usethis::use_github()
