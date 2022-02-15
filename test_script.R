@@ -1,11 +1,11 @@
 
-
-install.packages(c("dplyr", "data.table", "stringi"))
+#run once
+#install.packages(c("dplyr", "data.table", "stringi", "usethis))
 
 library(dplyr)
 library(data.table)
 library(stringi)
-
+library(usethis)
 
 set.seed(1234)
 dt <- data.frame(var1 = LETTERS,
@@ -14,19 +14,10 @@ dt <- data.frame(var1 = LETTERS,
 
 dt %>%
   filter(var3 > 0.5) %>%
-  mutate(letter_found = ifelse(grepl("A", var1), "Yes", "No"))
+  mutate(letter_found = ifelse(grepl("A", var1), "Yes", "No")) -> out
+
+fwrite(out, "test_out.tsv", sep = "\t", row.names = FALSE)
 
 
-
-
-
-
-
-renv::snapshot()
-
-
-
-
-
-
-
+usethis::use_github_action("lint-project")
+usethis::use_github()
