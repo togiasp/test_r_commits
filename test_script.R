@@ -19,5 +19,6 @@ dt %>%
 fwrite(out, "test_out.tsv", sep = "\t", row.names = FALSE)
 
 
-usethis::use_github_action("lint-project")
+#some random comment
+
 usethis::use_github()
