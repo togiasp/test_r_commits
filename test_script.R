@@ -1,6 +1,6 @@
 
 #run once
-#install.packages(c("dplyr", "data.table", "stringi", "usethis))
+#install.packages(c("dplyr", "data.table", "stringi", "usethis", "RCurl"))
 
 library(dplyr)
 library(data.table)
